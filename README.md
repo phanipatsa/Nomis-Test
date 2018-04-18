@@ -23,7 +23,7 @@ Batch file for Execution
 Excel sheet (Data, Objects, workflow)
 Selenium Jar file
 Source code
-Screen Shots and Execution Report.
+Screen Shots and Execution Report
 
 
  

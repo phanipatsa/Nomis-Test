@@ -1,8 +1,9 @@
 # Nomis-Test
-Test Navigation features on Nomis Website using the automation batch file created using Selenium with Java, generate execution report.
+Test Navigation features on Nomis Website using the automation batch file created using Selenium with Java.
 
 Assumptions:
-DB Validations, Negative scenarios and Boundary conditions for testing are out of scope as this is only a POC with limited acess to the webpage.
+Since this is for demo purpose, DB Validations, Negative scenarios and Boundary conditions for testing are out of scope as this is being executed with only limited acess to the webpage. Input has been hardcoded within the script using Send Keys function instead of passing from a Data source like an Excel Sheet. Reports and test execution status is not generated for this demo as that will involve dependency with the Framework components.
+
 
 Scope:
 
@@ -12,18 +13,16 @@ Criteria: The webpage must be loaded sucessfully.
 Step 2: Validate Navigation for Home Page -> Solutions & Products -> Mortgages
 Criteria: Navigate to "Home Page -> Solutions & Products -> Mortgages" and click on Solution Brief, page must load and header must match with this text 'Solution Brief'
  
-Step 3: Search for a key words like MPO (Pass the text from Excel Sheet so that multiple search can be made using the same function) and select first link from search result.
-Criteria: The search must be sucessful and return valid links with key word match, First link must open and key word should be matched on the page.
+Step 3: Use the Search feature on the Home page using key words like (eg. 'MPO') and view the search result.
+Criteria: The search must be sucessful and return valid links with key word match.
  
-Step 4: Click on "Get Started" Button on Home Page and pass test data from Excel sheet to Complimentary Assessment form.
+Step 4: Click on "Get Started" Button on Home Page and pass test data to Complimentary Assessment form.
 Criteria: pass the test sample data to the assessment form and submit the form.
  
 Output:
 Batch file for Execution
-Excel sheet (Data, Objects, workflow)
 Selenium Jar file
 Source code
-Screen Shots and Execution Report
 
 
  

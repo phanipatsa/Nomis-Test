@@ -1,6 +1,6 @@
 # Nomis-Test
 Test Navigation features on Nomis Website using the automation batch file created using Selenium with Java.
-The Source Code is present in the Nomi.zip file under the folder 'SRC' and the results with screen capture are present in the 'Results' Folder, rest of the folders and files are other reference files and jar/class files needed for the execution of the automation scripts.
+Extract the Nomi.zip file to a local destination on your computer,  The Source Code is present under the folder 'SRC' as 'Nomi.java' and the results with screen capture are present in the 'Results' Folder, rest of the folders and files are other reference files like crome driver, selenium jar, class files that are needed for the execution of the automation script.
 
 Assumptions:
 Since this is for demo purpose, DB Validations, Negative scenarios and Boundary conditions for testing are out of scope as this is being executed with only limited acess to the webpage. Input has been hardcoded within the script using Send Keys function instead of passing from a Data source like an Excel Sheet. Reports and test execution status is not generated for this demo as that will involve dependency with the Framework components.

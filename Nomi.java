@@ -1,3 +1,5 @@
+//Initialize the Package and import all the required functions
+
 package nomi;
 
 import java.io.File;
@@ -27,15 +29,15 @@ public class Nomi {
 		
 	    Nomi obj = new Nomi();
 	    
-	   
-	    obj.launch();
-	    obj.navigate();
+	   	//Step1: To Launch home page and navigate the webpage.
+	    	obj.launch();
+	    	obj.navigate();
 		
-		
+		//Step2: Use the Search feature on the website.
 		obj.launch();
 		obj.search();
 		
-		
+		//Step3: Submit the Assessment form on the webpage.
 		obj.launch();
 		obj.assessment();
 		
@@ -43,12 +45,17 @@ public class Nomi {
 	    
 	}
 
+	//Reusable Function to lauch the webpage
+	
 	public void launch() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Lib\\chromedriver.exe");
 	     driver = new ChromeDriver();
 	     driver.get("https://www.nomissolutions.com");
 	     driver.manage().window().maximize();
 	}
+	
+	//Function to navigate to Solutions & Products -> Mortgages and click on 'Solution Brief'
+	
 	public void navigate() throws Exception{
 		
 		Actions action = new Actions(driver);
@@ -57,7 +64,7 @@ public class Nomi {
 		WebElement mg = driver.findElement(By.linkText("Mortgages"));
 		action.moveToElement(mg).build().perform();
 		mg.click();
-		driver.findElement(By.linkText(" Solution Brief »")).click();
+		driver.findElement(By.linkText(" Solution Brief Â»")).click();
 		wait = new WebDriverWait(driver, 10);
 		if(driver.findElement(By.xpath("//h2[text()='Solution Brief']")).isDisplayed())
 		System.out.println("Solution Brief page is displayed");
@@ -67,6 +74,8 @@ public class Nomi {
 		
 	}
 	
+	//Function to Search website
+	
 	public void search() throws Exception {
 		driver.findElement(By.name("search")).sendKeys("NOMI");
 		driver.findElement(By.name("search")).sendKeys(Keys.ENTER);
@@ -75,6 +84,7 @@ public class Nomi {
 		driver.close();	
 	}
 	
+	//Function to submit assessment form
 	public void assessment() throws Exception {
 		if(driver.findElement(By.xpath("//span[text()='Get Started']")).isDisplayed())
 			driver.findElement(By.xpath("//span[text()='Get Started']")).click();
@@ -90,6 +100,8 @@ public class Nomi {
 			this.takeSnapShot(driver, System.getProperty("user.dir")+"\\Results\\Run_"+getTimeStamp()+".png");
 			driver.close();
 	}
+	
+	//Reusable Function to capture screen shot
 	
 	public  void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
 
@@ -108,7 +120,7 @@ public class Nomi {
                 FileUtils.copyFile(SrcFile, DestFile);
 
     }
-	
+	//Reusable Function to get date and time
 	public String getTimeStamp(){
 		DateFormat df = new SimpleDateFormat("ddMMyy_HHmmss");
 		Calendar calobj = Calendar.getInstance();
